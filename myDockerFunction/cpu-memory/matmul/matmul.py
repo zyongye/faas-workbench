@@ -13,6 +13,7 @@ def matmul(N):
 
 def main(request):
     N = request['N']
-    latency = matmul(N)
+    latency = matmul(int(N))
     print(latency)
-    return { "latency": str(latency) }
+    return { "body": {"latency": str(latency)}  }
+

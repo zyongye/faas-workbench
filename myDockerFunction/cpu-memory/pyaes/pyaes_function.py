@@ -10,16 +10,16 @@ def generate(length):
 
 
 def main(request):
-    length_of_message = 1
-    num_of_iterations = 1
+    length_of_message = request["length_of_message"]
+    num_of_iterations = request["num_of_iterations"]
 
-    message = generate(length_of_message)
+    message = generate(int(length_of_message))
 
     # 128-bit key (16 bytes)
     KEY = b'\xa1\xf6%\x8c\x87}_\xcd\x89dHE8\xbf\xc9,'
 
     start = time()
-    for loops in range(num_of_iterations):
+    for loops in range(int(num_of_iterations)):
         aes = pyaes.AESModeOfOperationCTR(KEY)
         ciphertext = aes.encrypt(message)
         print(ciphertext)
@@ -31,4 +31,4 @@ def main(request):
 
     latency = time() - start
 
-    return { "latency": str(latency)}
+    return { "body": {"latency": str(latency)} } 

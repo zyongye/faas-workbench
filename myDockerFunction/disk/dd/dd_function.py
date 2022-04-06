@@ -18,7 +18,7 @@ def main(request):
     print(output)
                                
     with open('/tmp/io_write_logs') as logs:
-        result = { 'body': str(logs.readlines()).replace('\n', '') }
+        result = { "body": {'body': str(logs.readlines()).replace('\n', '')} }
         print(result)
         return result
 

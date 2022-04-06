@@ -13,6 +13,6 @@ def float_operation(N):
 
 def main(request):
     N = request['N']
-    latency = float_operation(N)
+    latency = float_operation(int(N))
     print(latency)
-    return { "latency": str(latency) , "dir": os.getcwd()}
+    return { "body": { "latency": str(latency) } }

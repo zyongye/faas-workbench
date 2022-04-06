@@ -18,6 +18,6 @@ def main(request):
 
     print(str_json)
 
-    return { "network": str(network),
-             "latency": str(latency) }
+    return { "body": {"network": str(network),
+             "latency": str(latency)} }
 

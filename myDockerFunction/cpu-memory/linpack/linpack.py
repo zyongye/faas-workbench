@@ -32,6 +32,6 @@ def linpack(N):
 
 def main(request):
     N = request['N']
-    result = linpack(N)
+    result = linpack(int(N))
     print(result)
-    return { "latency": str(result['latency']) }
+    return { "body": {"latency": str(result['latency'])} }
