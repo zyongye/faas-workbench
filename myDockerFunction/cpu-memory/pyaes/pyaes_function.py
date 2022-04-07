@@ -30,5 +30,7 @@ def main(request):
         aes = None
 
     latency = time() - start
+    print(latency)
 
     return { "body": {"latency": str(latency)} } 
+
